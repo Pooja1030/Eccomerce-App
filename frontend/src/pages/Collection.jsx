@@ -66,7 +66,7 @@ const Collection = () => {
 
     useEffect(() => {
         applyFilter();
-    }, [category, subCategory, search, showSearch]);  // Change SubCategory to subCategory
+    }, [category, subCategory, search, showSearch,products]);  // Change SubCategory to subCategory
 
     useEffect(() => {
         sortProduct();
