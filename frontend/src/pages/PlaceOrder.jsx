@@ -66,7 +66,7 @@ const PlaceOrder = () => {
       }
     }
 
-    const rzp = new window.Razopay(options)
+    const rzp = new window.Razorpay(options)
     rzp.open()
 
   }

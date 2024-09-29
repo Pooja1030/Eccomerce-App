@@ -71,7 +71,7 @@ const Product = () => {
                 <hr className='mt-8 sm:w-4/5' />
                 <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
                     <p>100% Original Product.</p>
-                    <p>Cash on deliery</p>
+                    <p>Cash on delivery</p>
                     <p>Easy return and exchange policy within 7 days.</p>
                 </div>
             </div>
@@ -81,7 +81,7 @@ const Product = () => {
        <div className='mt-20'>
           <div className='flex'>
             <b className='border px-5 py-3 text-sm'>Description</b>
-            <p className='border px-5 py-3 text-sm'>Reiews (122)</p>
+            <p className='border px-5 py-3 text-sm'>Reviews (122)</p>
           </div>
           <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
           <p>An e-commerce agji aiohr oaih hoi aogj hoij hohag oih iagh</p>

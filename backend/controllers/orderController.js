@@ -4,7 +4,7 @@ import Stripe from 'stripe'
 import razorpay from 'razorpay'
 
 
-// gloal ariales
+// global variales
 const currency = 'inr'
 const deliveryCharge = 10 
 

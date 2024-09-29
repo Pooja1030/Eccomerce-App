@@ -19,7 +19,7 @@ const Add = ({token}) => {
     const [price,setPrice] = useState('');
     const [category,setCategory] = useState('Men');
     const [subcategory,setSubcategory] = useState('Topwear');
-    const [bestseller,setestseller] = useState(false);
+    const [bestseller,setBestseller] = useState(false);
     const [sizes, setSizes] = useState([]);
 
     const onSubmitHandler = async (e) => {
@@ -146,7 +146,7 @@ const Add = ({token}) => {
        </div>
 
        <div>
-        <input onChange={() => setestseller(prev => !prev)} checked={estseller} type='checkbox' id='bestseller' />
+        <input onChange={() => setBestseller(prev => !prev)} checked={bestseller} type='checkbox' id='bestseller' />
         <label className='cursor-pointer' htmlFor='bestseller'>Add to bestseller</label>
        </div>
 
