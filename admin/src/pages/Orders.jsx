@@ -10,6 +10,7 @@ import { assets } from "../assets/assets";
 const Orders = ({ token }) => {
   const [orders, setOrders] = useState([]);
 
+  //  Fetching all orders
   const fetchAllOrders = async () => {
     if (!token) {
       return null;
@@ -31,6 +32,7 @@ const Orders = ({ token }) => {
     }
   };
 
+  //  Status Handler
   const statusHandler = async ( event, orderId ) => {
     try {
       const response = await axios.post(backendUrl + "/api/order/status", {orderId, status:event.target.value}, {headers:{token}})

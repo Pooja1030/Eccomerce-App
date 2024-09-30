@@ -35,12 +35,15 @@ const PlaceOrder = () => {
     phone: "",
   });
 
+  // OnChangeHandler 
   const onChangeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
 
     setFormdata((data) => ({ ...data, [name]: value }));
   };
+
+  // init Payment
 
   const initPay = (order) => {
     const options = {
@@ -110,27 +113,25 @@ const PlaceOrder = () => {
           }
           break;
           
-          case "stripe":
-            const responseStripe = await axios.post(backendUrl + '/api/order/stripe', orderData,{headers:{token}})
-            if(responseStripe.data.success){
-              const {session_url} = responseStripe.data
-              window.location.replace(session_url)
-            }else{
-              toast.error(responseStripe.data.message)
-            }
-            break;
-            
-            case 'razorpay':
-              
-              const responseRazorpay = await axios.post(backendUrl + '/api/order/razorpay', orderData,{headers:{token}})
-              if(responseRazorpay.data.success){
-                initPay(responseRazorpay.data.order)
-              }
-              break;
+        case "stripe":
+          const responseStripe = await axios.post(backendUrl + '/api/order/stripe', orderData,{headers:{token}})
+          if(responseStripe.data.success){
+            const {session_url} = responseStripe.data
+            window.location.replace(session_url)
+          }else{
+            toast.error(responseStripe.data.message)
+          }
+          break;
+          
+        case 'razorpay':  
+          const responseRazorpay = await axios.post(backendUrl + '/api/order/razorpay', orderData,{headers:{token}})
+          if(responseRazorpay.data.success){
+            initPay(responseRazorpay.data.order)
+          }
+          break;
 
-
-          default:
-            break;
+        default:
+          break;
       }
     } catch (error) {
       console.log(error)
