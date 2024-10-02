@@ -5,6 +5,8 @@ import { Form } from 'react-router-dom'
 import axios from 'axios'
 import { backendUrl } from '../App'
 import { toast } from 'react-toastify'
+import PropTypes from 'prop-types'
+
 
 
 const Add = ({token}) => {
@@ -111,7 +113,7 @@ const Add = ({token}) => {
             <p className='mb-2'>Sub Category</p>
             <select onChange={(e) => setSubcategory(e.target.value)} className='w-full px-3 py-2'>
                 <option value= "Topwear">Topwear</option>
-                <option value= "ottomwear">ottomwear</option>
+                <option value= "Bottomwear">Bottomwear</option>
                 <option value= "Winterwear">Winterwear</option>
             </select>
         </div>
@@ -155,6 +157,10 @@ const Add = ({token}) => {
 
     </form>
   )
+}
+
+Add.propTypes = {
+    token: PropTypes.string.isRequired, // Prop validation for 'token'
 }
 
 export default Add
