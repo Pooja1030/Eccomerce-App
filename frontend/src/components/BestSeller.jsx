@@ -10,7 +10,7 @@ const BestSeller = () => {
     const [bestSeller, setBestSeller] = useState([]); // Ensure consistency in naming
 
     useEffect(() => {
-        const bestProduct = products.filter((item) => item.bestseller);
+        const bestProduct = products.filter((item) => (item.bestseller));
         setBestSeller(bestProduct.slice(0, 5));
     }, [products]); // Add 'products' as a dependency to ensure it runs when products change
 

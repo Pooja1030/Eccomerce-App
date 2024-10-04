@@ -57,7 +57,7 @@ const PlaceOrder = () => {
       handler: async (response) => {
         console.log(response)
         try {
-          const {data} = await axios.post(backendUrl + '/api/order/verifyRazorpay',response,{headers:{token}})
+          const {data} = await axios.post(backendUrl + '/api/order/verifyRazorpay',response,{headers: { Authorization: `Bearer ${token}` }})
           if(data.success){
             navigate('/orders')
             setCartItems({})
@@ -84,7 +84,7 @@ const PlaceOrder = () => {
         for (const item in cartItems[items]) {
           if (cartItems[items][item] > 0) {
             const itemInfo = structuredClone(
-              products.find((product) => product._id === items)
+              products.find((product => product._id === items))
             );
             if (itemInfo) {
               itemInfo.size = item;
@@ -104,7 +104,7 @@ const PlaceOrder = () => {
       switch (method) {
         // API Calls for COD
         case "cod":{
-          const response = await axios.post(backendUrl + '/api/order/place',orderData,{headers:{token}})
+          const response = await axios.post(backendUrl + '/api/order/place',orderData,{headers: { Authorization: `Bearer ${token}` }})
           if(response.data.success) {
             setCartItems({})
             navigate('/orders')
@@ -115,7 +115,7 @@ const PlaceOrder = () => {
         }
           
         case "stripe":{
-          const responseStripe = await axios.post(backendUrl + '/api/order/stripe', orderData,{headers:{token}})
+          const responseStripe = await axios.post(backendUrl + '/api/order/stripe', orderData,{headers: { Authorization: `Bearer ${token}` }})
           if(responseStripe.data.success){
             const {session_url} = responseStripe.data
             window.location.replace(session_url)
@@ -125,7 +125,7 @@ const PlaceOrder = () => {
           break;
         }
         // case 'razorpay':  
-        //   const responseRazorpay = await axios.post(backendUrl + '/api/order/razorpay', orderData,{headers:{token}})
+        //   const responseRazorpay = await axios.post(backendUrl + '/api/order/razorpay', orderData,{headers: { Authorization: `Bearer ${token}` }})
         //   if(responseRazorpay.data.success){
         //     initPay(responseRazorpay.data.order)
         //   }

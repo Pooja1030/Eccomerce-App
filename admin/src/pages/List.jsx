@@ -27,7 +27,7 @@ const List = ({token}) => {
 
   const removeProduct = async (id) => {
     try {
-      const response = await axios.post(backendUrl + '/api/product/remove', {id} , {headers:{token}})
+      const response = await axios.post(backendUrl + '/api/product/remove', {id} , {headers: { Authorization: `Bearer ${token}` }})
 
       if(response.data.success){
         toast.success(response.data.message)
@@ -80,6 +80,10 @@ const List = ({token}) => {
      </div>
     </>
   )
+}
+
+List.propTypes = {
+  token: PropTypes.string.isRequired 
 }
 
 export default List

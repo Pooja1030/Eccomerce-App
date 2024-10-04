@@ -15,7 +15,7 @@ orderRouter.post('/stripe',authUser,placeOrderStripe)
 // orderRouter.post('/razorpay',authUser,placeOrderRazorpay)
 
 // user feature
-orderRouter.post('/userorders', authUser, userOrders)
+orderRouter.get('/userorders', authUser, userOrders)
 
 // verify payment
 orderRouter.post('/verifyStripe', authUser, verifyStripe)

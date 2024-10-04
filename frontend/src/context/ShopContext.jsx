@@ -49,16 +49,12 @@ const ShopContextProvider = (props) => {
 
         if(token){
             try {
-                
-                await axios.post(backendUrl + '/api/cart/add', {itemId, size}, {headers:{token}})
-
+                await axios.post(backendUrl + '/api/cart/add', {itemId, size}, {headers: { Authorization: `Bearer ${token}` }})
             } catch (error) {
                 console.log(error)
                 toast.error(error.message)   
             }
         }
-
-
     }
 
     const getCartCount = () => {
@@ -86,10 +82,8 @@ const ShopContextProvider = (props) => {
         setCartItems(cartData);
 
         if(token){
-            try {
-                
-                await axios.post(backendUrl + '/api/cart/update', {itemId,size,quantity}, {headers:{token}})
-
+            try {     
+                await axios.post(backendUrl + '/api/cart/update', {itemId,size,quantity}, {headers: { Authorization: `Bearer ${token}` }})
             } catch (error) {
                 console.log(error)
                 toast.error(error.message)   
@@ -137,7 +131,7 @@ const ShopContextProvider = (props) => {
 
     const getUserCart = async ( token ) => {
             try {
-                const response = await axios.post(backendUrl + '/api/cart/get', {}, {headers:{token}})
+                const response = await axios.post(backendUrl + '/api/cart/get', {}, {headers: { Authorization: `Bearer ${token}` }})
                 if(response.data.success){
                     setCartItems(response.data.cartData)
                 }
@@ -145,6 +139,7 @@ const ShopContextProvider = (props) => {
                 console.log(error)
                 toast.error(error.message)   
             }
+            console.log("Received request for user's cart.");
         }
 
     useEffect(()=>{
