@@ -139,7 +139,7 @@ const Add = ({ token }) => {
                     <input
                         onChange={(e) => setPrice(e.target.value)}
                         className='w-full px-3 py-2 sm:w-[120px]'
-                        type='number'
+                        type='Number'
                         placeholder='25'
                         required
                     />
