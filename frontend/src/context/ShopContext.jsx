@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
-import { products } from "../assets/assets";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
@@ -155,7 +154,7 @@ const ShopContextProvider = (props) => {
 
 
     const value = {
-        products , currency, delivery_fee,
+        products, currency, delivery_fee,
         search,setSearch,showSearch,setShowSearch,
         cartItems,addToCart, setCartItems,
         getCartCount,updateQuantity,

@@ -4,12 +4,10 @@ const productSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        trim: true,
     },
     description: {
         type: String,
         required: true,
-        trim: true,
     },
     price: {
         type: Number,
@@ -18,31 +16,31 @@ const productSchema = new mongoose.Schema({
     category: {
         type: String,
         required: true,
-        enum: ['Men', 'Women', 'Kids'],
+        // enum: ['Men', 'Women', 'Kids'],
     },
     subCategory: {
         type: String,
         required: true,
-        enum: ['Topwear', 'Bottomwear', 'Winterwear'],
+        // enum: ['Topwear', 'Bottomwear', 'Winterwear'],
     },
     bestseller: {
         type: Boolean,
-        default: false,
+        // default: false,
     },
     sizes: {
-        type: [String],
+        type: Array,
         required: true,
     },
     image: {
-        type: [String],
+        type: Array,
         required: true,
     },
     date: {
-        type: Date,
-        default: Date.now,
+        type: Number,
+        required: true,
     },
 });
 
-const productModel = mongoose.model('Product', productSchema);
+const productModel = mongoose.models.product || mongoose.model('product', productSchema);
 
 export default productModel;
