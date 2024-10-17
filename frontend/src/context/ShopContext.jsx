@@ -103,7 +103,7 @@ const ShopContextProvider = (props) => {
             for(const item in cartItems[items]){
                 try{
                     if(cartItems[items][item] > 0){
-                        totalAmount += itemInfo.price * cartItems[items][item]
+                        totalAmount += itemInfo.price * cartItems[items][item];
                     }
                 }catch(error){
 
@@ -112,21 +112,21 @@ const ShopContextProvider = (props) => {
         }
         return totalAmount;
     }
-
     const getProductsData = async () => {
         try {
-            const response = await axios.get(backendUrl + '/api/product/list')
-              if(response.data.success){
-                setProducts(response.data.products)
-              } else {
-                toast.error(response.data.message)
-              }
-
+            const response = await axios.get(backendUrl + '/api/product/list');
+            console.log("API Response:", response.data);  // Log the API response to check if products are being fetched
+            if(response.data.success){
+                setProducts(response.data.products);
+            } else {
+                toast.error(response.data.message);
+            }
         } catch (error) {
-            console.log(error)
-            toast.error(error.message)
+            console.log("Error fetching products:", error);
+            toast.error(error.message);
         }
-    }
+    };
+    
 
     const getUserCart = async ( token ) => {
             try {
@@ -140,17 +140,23 @@ const ShopContextProvider = (props) => {
             }
             console.log("Received request for user's cart.");
         }
+        useEffect(() => {
+            console.log("Fetching products...");
+            getProductsData();
+        }, []);
 
-    useEffect(()=>{
-        getProductsData()
-    }, [])
-
+        useEffect(() => {
+            console.log("Products state after fetch:", products);  // Check if products are updated in the state
+        }, [products]);
+        
+        
     useEffect(()=>{
         if(!token && localStorage.getItem('token')){
             setToken(localStorage.getItem('token'))
             getUserCart(localStorage.getItem('token'))
         }
     },[])
+    console.log("Backend URL:", backendUrl);
 
 
     const value = {

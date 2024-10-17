@@ -12,9 +12,12 @@ const Orders = () => {
   const loadOrderData = async () => {
     try {
       if(!token){
-        return null
+        return null;
       }
       const response = await axios.post(backendUrl + '/api/order/userorders',{},{headers: { Authorization: `Bearer ${token}` }})
+      console.log(response.data);
+      
+      
       if(response.data.success){
         let allOrdersItem = []
         response.data.orders.map((order)=> {
@@ -24,13 +27,21 @@ const Orders = () => {
               item['paymentMethod'] = order.paymentMethod
               item['date'] = order.date
               allOrdersItem.push(item)
-            })
-        })
+            });
+        });
         setorderData(allOrdersItem.reverse());
       }
 
     } catch (error) {
-      //  
+      console.error(error); 
+
+      if (error.response) {
+        console.error("Error response data:", error.response.data);
+        console.error("Error response status:", error.response.status);
+        console.error("Error response headers:", error.response.headers);
+      } else {
+        console.error("Error message:", error.message); // Log error message if no response is available
+      }
     }
   }
 
@@ -43,7 +54,9 @@ const Orders = () => {
       <div className='text-2xl'>
         <Title text1={'MY'} text2={'ORDERS'} />
       </div>
-
+      {orderData.length === 0 ? (
+      <p>No orders found.</p>
+    ) : (
       <div>
         {
           orderData.map((item,index)=>(
@@ -73,6 +86,7 @@ const Orders = () => {
           ))
         }
       </div>
+    )}
     </div>
   )
 }
