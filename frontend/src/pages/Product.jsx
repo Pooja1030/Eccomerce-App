@@ -101,8 +101,12 @@ const Product = () => {
                     <p className="border px-5 py-3 text-sm">Reviews (122)</p>
                 </div>
                 <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
-                    <p>An e-commerce agji aiohr oaih hoi aogj hoij hohag oih iagh</p>
-                    <p>E-commerce opajg oh oh aga oiahg aig oah</p>
+                <p>
+                    Discover the perfect blend of quality and style with our latest product. Crafted with attention to detail, this item is designed to enhance your experience and meet your expectations. Whether you are looking for functionality or aesthetic appeal, this product is sure to impress.
+                </p>
+                <p>
+                    Ideal for everyday use or special occasions, it offers durability and sophistication. Join countless satisfied customers who have made this product a favorite. Add it to your cart today and elevate your collection!
+                </p>
                 </div>
             </div>
 

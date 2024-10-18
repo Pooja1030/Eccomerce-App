@@ -10,7 +10,7 @@ const Footer = () => {
       <div>
         <img src={assets.logo} className='mb-5 w-32' alt=''/>
         <p className='w-full md:w-2/3 text-gray-600'>
-            Lorem ohgs hjwhs hoiw wih shos wtgj swohj.
+            At forever, we believe in delivering quality and style. Our passion is to curate unique collections that resonate with your individual taste. Join us on a journey to discover exceptional products that enhance your lifestyle and reflect your personality.
         </p>
       </div>
 
@@ -27,7 +27,7 @@ const Footer = () => {
       <div>
         <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
         <ul className='flex flex-col gap-1 text-gray-600'>
-            <li>+1-212-456-7890</li>
+            <li>+1-000-000-0000</li>
             <li>contact@foreveryou.com</li>
         </ul>
       </div>
