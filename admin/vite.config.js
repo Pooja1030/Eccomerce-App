@@ -6,12 +6,15 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      external: ['react-toastify','react-router-dom'], // Add this line
+      external: ['react-router-dom', 'react-toastify'], // Explicitly externalize these
     },
   },
   resolve: {
     alias: {
-      '@': '/src', // Ensure this is correct based on your project structure
+      '@': '/src', // Adjust this alias as per your project structure
     },
+  },
+  optimizeDeps: {
+    include: ['react-router-dom', 'react-toastify'], // Ensure they are bundled properly
   },
 });
