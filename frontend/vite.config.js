@@ -7,4 +7,9 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
+  resolve: {
+    alias: {
+      '@': '/src', // Example alias, modify according to your project structure
+    },
+  },
 })
