@@ -1,18 +1,17 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
     rollupOptions: {
-      external: ['react-router-dom'], 
+      external: ['react-router-dom'], // Add this line
     },
   },
   resolve: {
     alias: {
-      '@': '/src', // Ensure this matches your project structure
+      '@': '/src', // Ensure this is correct based on your project structure
     },
   },
-})
+});
