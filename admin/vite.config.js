@@ -16,6 +16,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['react-toastify', 'react-router-dom','react-toastify/dist/ReactToastify.css'], // Include both libraries
+    include: ['react-toastify', 'react-router-dom'], // Include both libraries
   },
 });
