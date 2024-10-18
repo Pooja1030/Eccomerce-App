@@ -11,7 +11,6 @@ import Login from './components/Login'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Make sure to import styles as well
 
-
 export const backendUrl = import.meta.env.VITE_BACKEND_URL
 export const currency = '$'
 
