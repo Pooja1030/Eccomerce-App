@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      external: ['react-router-dom'], // Add this line
+      external: ['react-toastify','react-router-dom'], // Add this line
     },
   },
   resolve: {
