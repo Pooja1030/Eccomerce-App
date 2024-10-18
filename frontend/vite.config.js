@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      external: [],
+      external: ['react-router-dom'], 
     },
   },
   resolve: {
