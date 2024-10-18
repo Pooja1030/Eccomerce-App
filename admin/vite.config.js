@@ -5,14 +5,13 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
-    // Rollup optimizations (can remove external)
+    rollupOptions: {
+      external: ['react-toastify','react-router-dom'], // Add this line
+    },
   },
   resolve: {
     alias: {
-      '@': '/src',
+      '@': '/src', // Ensure this is correct based on your project structure
     },
-  },
-  optimizeDeps: {
-    include: ['react-toastify', 'react-router-dom'], // Force Vite to pre-bundle these dependencies
   },
 });
