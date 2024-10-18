@@ -1,3 +1,4 @@
+// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -6,7 +7,16 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      external: ['react-router-dom', 'react-toastify'], // Explicitly externalize these
+      external: ['react-router-dom'], // You can keep other externals if needed
+      output: {
+        // Ensure that your assets are outputted correctly
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'ReactToastify.css') {
+            return 'assets/react-toastify.css'; // Customize output path if needed
+          }
+          return assetInfo.name;
+        },
+      },
     },
   },
   resolve: {
@@ -15,6 +25,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['react-router-dom', 'react-toastify'], // Ensure they are bundled properly
+    include: ['react-toastify'], // Ensure it is included in the bundle
   },
 });
