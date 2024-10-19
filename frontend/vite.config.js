@@ -7,7 +7,7 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       // You can keep other externals if needed
-      external: ['react-router-dom','react-toastify','react-toastify/dist/ReactToastify.css','prop-types'], // Ensure any external dependencies are listed here
+      external: ['react-router-dom','react-toastify','react-toastify/dist/ReactToastify.css','prop-types','axios'], // Ensure any external dependencies are listed here
     },
   },
   resolve: {
