@@ -18,7 +18,7 @@ const Add = ({ token }) => {
     const [bestseller, setBestseller] = useState(false);
     const [sizes, setSizes] = useState([]);
 
-    const backendUrl = 'http://localhost:5000'; // Replace with your actual backend URL
+    const backendUrl = 'https://eccomerce-app-backend-1bdp.onrender.com'; // Replace with your actual backend URL
 
     const onSubmitHandler = async (e) => {
         e.preventDefault();
