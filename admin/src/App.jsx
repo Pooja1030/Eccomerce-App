@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Add from './pages/Add'

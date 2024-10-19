@@ -1,21 +1,32 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { fileURLToPath } from 'url'; // Import to resolve file URLs
+import path from 'path'; // Import path for resolving aliases
+
+// Resolve the current directory using import.meta.url
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
     rollupOptions: {
-      // You can keep other externals if needed
-      external: ['react-router-dom','react-toastify','react-toastify/dist/ReactToastify.css','prop-types','axios'], // Ensure any external dependencies are listed here
+      external: [
+        'react-router-dom',
+        'react-toastify',
+        'prop-types',
+        'axios',
+      ], // Add external dependencies here if needed
     },
   },
   resolve: {
     alias: {
-      '@': '/src', // Adjust this alias as per your project structure
+      'react-router-dom': path.resolve(__dirname, 'node_modules/react-router-dom'),
+      '@': path.resolve(__dirname, 'src'), // Adjust alias if necessary
     },
   },
   optimizeDeps: {
-    include: ['react-toastify', 'react-router-dom','prop-types','axios'], // Include both libraries
+    include: ['react-toastify', 'react-router-dom', 'prop-types', 'axios'], // Pre-bundle these for optimization
   },
 });
