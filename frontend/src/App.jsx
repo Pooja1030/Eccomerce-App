@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import { BrowserRouter, Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Collection from './pages/Collection'
 import Home from './pages/Home'
@@ -25,7 +25,6 @@ const App = () => {
       <Navbar />
       <SearchBar />
 
-      <Router>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/collection' element={<Collection />} />
@@ -38,7 +37,7 @@ const App = () => {
           <Route path='/orders' element={<Orders />} />
           <Route path='/verify' element={<Verify />} />
         </Routes>
-      </Router>
+
 
       <Footer />
     </div>

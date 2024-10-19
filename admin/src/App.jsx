@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import { BrowserRouter, Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Add from './pages/Add'
 import List from './pages/List'
 import Orders from './pages/Orders'
@@ -30,7 +30,6 @@ const App = () => {
     ? <Login setToken={setToken} />
     :
     <>
-    <Router>
               <Navbar setToken={setToken} />
               <hr />
               <div className='flex w-full'>
@@ -43,7 +42,6 @@ const App = () => {
                   </Routes>
                 </div>
               </div>
-            </Router>
     </>
     }
     </div>
