@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',  // This tells Vite to serve the app from the root
+  base: '/', // This tells Vite to serve the app from the root
   build: {
     outDir: 'dist',
     rollupOptions: {
@@ -23,6 +23,9 @@ export default defineConfig({
   resolve: {
     alias: {
       'react-router-dom': path.resolve(__dirname, 'node_modules/react-router-dom'),
+      'react-toastify': path.resolve(__dirname, 'node_modules/react-toastify'), // Added alias for react-toastify
+      'axios': path.resolve(__dirname, 'node_modules/axios'), // Added alias for axios
+      'prop-types': path.resolve(__dirname, 'node_modules/prop-types'), // Added alias for prop-types
       '@': path.resolve(__dirname, 'src'), // Adjust alias if necessary
     },
   },
