@@ -11,6 +11,9 @@ export default defineConfig({
   base: '/',  // Ensure app serves from the root
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      external: ['react-toastify'] // Add this line
+    }
   },
   resolve: {
     alias: {
