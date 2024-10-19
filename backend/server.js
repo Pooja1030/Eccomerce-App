@@ -18,11 +18,8 @@ connectCloudinary()
 // middlewares
 
 app.use(express.json())
-app.use(cors({
-    origin: 'https://eccomerce-app-frontend.onrender.com', // Replace with your frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific methods
-    credentials: true,
-}));
+app.use(cors())
+
 // api endpoints
 
 app.use('/api/user',userRouter)
