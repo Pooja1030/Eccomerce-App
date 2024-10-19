@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import PropTypes from 'prop-types'  // Import PropTypes for validation
+import PropTypes from 'prop-types';  // Import PropTypes for validation
 import { assets } from '../assets/assets'
 
 const Navbar = ({ setToken }) => {
