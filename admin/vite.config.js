@@ -14,10 +14,6 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       external: [
-        'react-router-dom',
-        'react-toastify',
-        'prop-types',
-        'axios',
       ], // Add external dependencies here if needed
     },
   },
