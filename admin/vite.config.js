@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
+  base: '/',  // This tells Vite to serve the app from the root
   build: {
     outDir: 'dist',
     rollupOptions: {
