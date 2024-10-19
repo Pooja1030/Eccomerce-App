@@ -11,9 +11,6 @@ export default defineConfig({
   base: '/',  // Ensure app serves from the root
   build: {
     outDir: 'dist',
-    rollupOptions: {
-      external: [],  // Leave this empty for frontend projects
-    },
   },
   resolve: {
     alias: {
