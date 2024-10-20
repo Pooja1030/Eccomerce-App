@@ -1,5 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable no-unused-vars */
+import 'react-toastify/dist/ReactToastify.css'; // Ensure this line is included at the top
 import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
@@ -9,7 +10,6 @@ import List from './pages/List'
 import Orders from './pages/Orders'
 import Login from './components/Login'
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Ensure this line is included at the top
 
 
 

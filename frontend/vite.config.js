@@ -17,6 +17,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      'react-toastify': path.resolve(__dirname, 'node_modules/react-toastify'),
       'react-router-dom': path.resolve(__dirname, 'node_modules/react-router-dom'),
       '@': path.resolve(__dirname, 'src'), // Aliases for project structure
     },
