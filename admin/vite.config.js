@@ -17,6 +17,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      'axios': path.resolve(__dirname, 'node_modules/axios'),
+      'prop-types': path.resolve(__dirname, 'node_modules/prop-types'),
       'react-toastify': path.resolve(__dirname, 'node_modules/react-toastify'),
       'react-router-dom': path.resolve(__dirname, 'node_modules/react-router-dom'),
       '@': path.resolve(__dirname, 'src'), // Aliases for project structure
