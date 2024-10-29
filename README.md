@@ -14,10 +14,12 @@ Database: MongoDB for data storage
 Setup and Installation
 Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/Pooja1030/Eccomerce-App.git
-cd Ecommerce-App
+## Setup and Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Pooja1030/Eccomerce-App.git
+   cd Ecommerce-App
 Install dependencies for both frontend and backend:
 
 bash
