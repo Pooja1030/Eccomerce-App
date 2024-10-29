@@ -1,4 +1,3 @@
-
 Forever - E-commerce App
 An end-to-end e-commerce platform built with the MERN stack, designed to streamline the shopping experience for users with secure authentication, efficient cart management, and a robust backend.
 
@@ -47,3 +46,4 @@ cd frontend
 npm start
 Contributing
 Your contributions are welcome! Feel free to fork, create pull requests, or submit issues to help improve the project.
+
