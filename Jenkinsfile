@@ -5,14 +5,14 @@ pipeline {
 
 	stage('Build Container'){
 	   steps{
-	       sh 'docker compose build'
+	       sh 'docker-compose build'
 	   }
 	}
 
 	stage('Deploy Container'){
 	    steps{
-		sh 'docker compose down'
-		sh 'docker compose up -d'
+		sh 'docker-compose down'
+		sh 'docker-compose up -d'
 	    }
 	}
 
