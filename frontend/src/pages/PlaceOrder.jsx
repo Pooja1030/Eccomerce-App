@@ -6,7 +6,6 @@ import CartTotal from "../components/CartTotal";
 import { assets } from "../assets/assets";
 import { ShopContext } from "../context/ShopContext";
 import { toast } from "react-toastify";
-import { currency } from "../../../admin/src/App";
 import axios from 'axios'
 
 

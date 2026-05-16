@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
-import connectDB from './config/monogodb.js';
+import connectDB from "./config/mongodb.js";
 import connectCloudinary from './config/cloudinary.js';
 import userRouter from './routes/userRoute.js';
 import productRouter from './routes/productRoute.js';
@@ -16,22 +16,16 @@ connectDB();
 connectCloudinary();
 
 // CORS Configuration
-const allowedOrigins = [
-  'https://eccomerce-app-frontend.onrender.com',
-  'https://eccomerce-app-admin.onrender.com'
-];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed methods
-  allowedHeaders: ['Content-Type', 'Authorization'],   // Allowed headers
-  credentials: true  // Allow credentials if needed
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'https://eccomerce-app-frontend.onrender.com',
+    'https://eccomerce-app-admin.onrender.com'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 
 // Middlewares
