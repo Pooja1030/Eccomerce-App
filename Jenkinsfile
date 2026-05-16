@@ -3,13 +3,6 @@ pipeline {
     
     stages {
 
-	stage('Clone Repository'){
-	   steps {
-	       git 'https://github.com/Pooja1030/Eccomerce-App.git'
-           }
-	}
-
-
 	stage('Build Container'){
 	   steps{
 	       sh 'docker compose build'
