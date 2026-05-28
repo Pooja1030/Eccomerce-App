@@ -1,184 +1,366 @@
-### 🛍️ E-commerce Application
+# 🛒 MERN E-Commerce Platform with DevOps CI/CD & Monitoring
 
-A feature-rich, MERN stack-based e-commerce platform for seamless online shopping. This app offers a user-friendly interface built with Tailwind CSS, secure payment processing via Stripe, robust authentication using JWT tokens, and efficient product and order management.
+A production-style full-stack MERN E-Commerce platform built with modern DevOps practices including Docker, Jenkins CI/CD pipelines, Nginx reverse proxy, Prometheus monitoring, Grafana dashboards, and containerized deployments.
 
-## 🛠 Features
+This project demonstrates both **Full Stack Development** and **DevOps Engineering** skills by combining scalable application architecture with automated deployment and monitoring workflows.
 
-## 🚀 User Features
+---
 
-- **🔐 User Authentication:** Secure user registration and login with JWT tokens.
-- **🔎 Browse Products:** View and search for products by categories.
-- **🛒 Shopping Cart:** Add, remove, and update quantities of products.
-- **📑 Order Placement:** Place orders with Stripe or Cash on Delivery payment options.
-- **📜 Order History:** View and manage past orders.
-- **🔔 Live Notifications:** Get instant updates on actions via Toastify alerts.
-- **📱 Responsive Design:** The app is designed to be fully responsive and accessible on all screen sizes.
+# 🚀 Project Highlights
+
+## ✅ Full Stack MERN Application
+
+* Modern responsive e-commerce platform
+* JWT authentication & authorization
+* Product and order management
+* Stripe payment integration
+* Admin dashboard
+* Shopping cart functionality
+
+## ✅ DevOps & Infrastructure
+
+* Dockerized multi-container architecture
+* Jenkins CI/CD pipelines
+* Automated Docker image builds
+* Docker Hub image publishing
+* Reverse proxy with Nginx
+* Prometheus monitoring stack
+* Grafana dashboards
+* Blackbox monitoring
+* Container monitoring with cAdvisor
+* Infrastructure provisioning using Terraform
+
+---
+
+# 🏗️ Architecture
+
+```text
+Client
+   ↓
+Nginx Reverse Proxy
+   ↓
+Frontend (React)
+   ↓
+Backend API (Node.js + Express)
+   ↓
+MongoDB Database
+
+Monitoring Stack:
+Prometheus → Grafana
+        ↓
+Node Exporter
+cAdvisor
+Blackbox Exporter
+
+CI/CD:
+GitHub → Jenkins → Docker Build → Docker Hub
+```
+
+---
+
+# 📦 Tech Stack
+
+## Frontend
+
+* React.js
+* Tailwind CSS
+* Axios
+* React Router
+* React Toastify
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* JWT Authentication
+* Stripe API
+
+## DevOps & Infrastructure
+
+* Docker
+* Docker Compose
+* Jenkins
+* Nginx
+* Prometheus
+* Grafana
+* cAdvisor
+* Blackbox Exporter
+* Node Exporter
+* Terraform
+
+---
+
+# ✨ Features
+
+# 👤 User Features
+
+* Secure JWT Authentication
+* Browse Products
+* Search & Filter Products
+* Add to Cart
+* Place Orders
+* Stripe Payment Gateway
+* Cash on Delivery
+* Order History
+* Responsive UI
+* Toast Notifications
+
+---
+
+# 🛠️ Admin Features
+
+* Add Products
+* Edit Products
+* Delete Products
+* Manage Orders
+* Update Order Status
+* Inventory Management
+* Dashboard Analytics
+
+---
+
+# ⚙️ DevOps Features
+
+## Dockerized Application
+
+The application is fully containerized using Docker Compose.
+
+Containers include:
+
+* Frontend
+* Backend
+* Admin Panel
+* MongoDB
+* Nginx Reverse Proxy
+
+---
+
+## Jenkins CI/CD Pipeline
+
+Automated pipeline includes:
+
+* Source Code Checkout
+* Docker Image Build
+* Multi-Service Deployment
+* Container Verification
+* Docker Hub Push
+* Webhook Trigger Support
+
+---
+
+## Monitoring Stack
+
+Integrated monitoring stack:
+
+* Prometheus Metrics Collection
+* Grafana Dashboards
+* cAdvisor Container Monitoring
+* Node Exporter System Metrics
+* Blackbox Endpoint Monitoring
+
+---
+
+# 📁 Project Structure
+
+```bash
+Eccomerce-App/
+│
+├── frontend/
+├── backend/
+├── admin/
+├── nginx/
+├── docker-compose.yml
+├── Jenkinsfile
+├── terraform/
+│
+├── monitoring/
+│   ├── prometheus/
+│   ├── grafana/
+│   ├── blackbox/
+│
+└── README.md
+```
+
+---
+
+# 🐳 Docker Setup
+
+## Clone Repository
+
+```bash
+git clone https://github.com/Pooja1030/Eccomerce-App.git
+
+cd Eccomerce-App
+```
+
+---
+
+# 🔐 Environment Variables
+
+## Backend `.env`
+
+```env
+MONGO_URI=your_mongodb_uri
+
+JWT_SECRET=your_jwt_secret
+
+STRIPE_SECRET_KEY=your_stripe_secret
+```
+
+## Frontend `.env`
+
+```env
+REACT_APP_API_URL=http://localhost:5000
+```
+
+---
+
+# 🚀 Run Using Docker Compose
+
+```bash
+docker compose up --build
+```
+
+---
+
+# 🌐 Application Ports
+
+| Service     | Port  |
+| ----------- | ----- |
+| Frontend    | 3000  |
+| Backend     | 5000  |
+| Admin Panel | 3002  |
+| MongoDB     | 27017 |
+| Jenkins     | 8080  |
+| Prometheus  | 9090  |
+| Grafana     | 3001  |
+
+---
+
+# 📊 Monitoring Stack
+
+## Prometheus
+
+Collects:
+
+* System metrics
+* Container metrics
+* Application availability
+
+## Grafana
+
+Visualizes:
+
+* CPU usage
+* Memory usage
+* Container health
+* Docker metrics
+* Uptime monitoring
+
+---
+
+# 🔄 Jenkins Pipeline
+
+The Jenkins pipeline automates:
+
+```text
+GitHub Push
+    ↓
+Webhook Trigger
+    ↓
+Jenkins Build
+    ↓
+Docker Image Build
+    ↓
+Container Deployment
+    ↓
+Verification
+```
+
+---
+
+# 🧱 Terraform Infrastructure
+
+Terraform is used for:
+
+* Docker container provisioning
+* Multi-environment setup
+* Workspace management
+* Infrastructure lifecycle management
+* Remote state practice
+
+---
+
+# 📌 Docker Hub Images
+
+Published Docker images:
+
+* pooja1030/ecommerce-frontend:v1
+* pooja1030/ecommerce-backend:v1
+* pooja1030/ecommerce-admin:v1
+
+---
 
 
-## 🧑‍💻 Admin Features
+# 🧪 Future Improvements
 
-- **Product Management:** Add, edit, and remove products.
-- **Order Management:** Update order statuses and view user orders.
-- **Analytics Dashboard:** Monitor sales trends and inventory insights.
+* Kubernetes Deployment
+* AWS Infrastructure Deployment
+* Terraform AWS Modules
+* GitHub Actions CI/CD
+* SSL with Certbot
+* Load Balancer Integration
+* Blue-Green Deployments
+* Auto Scaling
+* Helm Charts
 
+---
 
-## 🌟 Additional Highlights
-- **Responsive UI:** Built with Tailwind CSS for sleek and adaptive design.
-- **API Integration:** Efficient communication between frontend and backend via Axios.
-- **Secure Payments:** Integrated with Stripe for seamless payment processing.
-- **Notification System:** Real-time alerts using React Toastify.
+# 🤝 Contribution
 
+1. Fork the repository
+2. Create your feature branch
 
+```bash
+git checkout -b feature-name
+```
 
-## 🌐 Live Demo
-Explore the live version here:
-[E-commerce App](https://eccomerce-app-frontend.onrender.com)
+3. Commit your changes
 
-## 🛠️ Tech Stack
+```bash
+git commit -m "Added feature"
+```
 
-| Technology       | Description                                   |
-|------------------|-----------------------------------------------|
-| **React.js**     | Frontend library for building UI components. |
-| **Node.js**      | Runtime for executing JavaScript on the server. |
-| **Express.js**   | Backend framework for building REST APIs.    |
-| **MongoDB**      | NoSQL database for data storage.             |
-| **Tailwind CSS** | Utility-first CSS framework for styling.     |
-| **JWT**          | JSON Web Tokens for authentication.          |
-| **Axios**        | HTTP client for making API requests.         |
-| **Stripe**       | Payment gateway integration.                 |
-| **Toastify**     | Library for toast notifications.             |
-| **Render**       | Deployment platform for the application.     |
+4. Push to branch
 
+```bash
+git push origin feature-name
+```
 
+5. Open a Pull Request
 
-## 🚀 Getting Started
+---
 
-## Prerequisties
-Ensure you have the following installed:
+# 👩‍💻 Author
 
-- **Node.js:** v16 or later
-- **MongoDB:** Running locally or hosted
-- **npm:** Node package manager
+## Pooja Sawant
 
+DevOps Engineer | Cloud Engineer | MERN Stack Developer
 
-## 1️⃣ Clone the Repository
-Start by cloning the repository to your local machine:
+* GitHub: https://github.com/Pooja1030
 
-   ```bash
-   git clone https://github.com/Pooja1030/Eccomerce-App.git
-   ```
-   ```bash
-   cd Eccomerce-App
-   ```
+---
 
+# ⭐ Acknowledgements
 
-## 2️⃣ Install Dependencies
-
-  🔧 Backend
-
-  Navigate to the backend directory:
-  
-   ```bash
-   cd backend
-   npm install
-   ```
-
-  🌟 Frontend
-   ```bash
-   cd frontend
-   npm install
-   ```
-
-   3️⃣ Configure Environment Variables
-   
-   Create a .env file in the backend folder with the following keys:
-   
-   Backend (/backend/.env)
-   ```bash
-   MONGO_URI=<Your MongoDB URI>
-   JWT_SECRET=<Your JWT Secret>
-   STRIPE_SECRET_KEY=<Your Stripe Secret Key>
-   ```
-
-   4️⃣ Run the Application
-   Backend
-   ```bash
-   cd backend
-   nodemon index.js
-   ```
-
-   Frontend
-   In another terminal:
-   ```bash
-   cd frontend
-   npm start
-   ```
-
-  5️⃣ Access the Application
-  - **Frontend:** http://localhost:3000
-  - **Backend:** http://localhost:5000
-
-    
-## 🔗 API Endpoints
-
-Authentication
-
-| HTTP Method | Endpoint                | Description                     | Authentication Required |
-|-------------|-------------------------|---------------------------------|-------------------------|
-| `POST`      | `/api/auth/login`        | Login user                      | No                      |
-| `POST`      | `/api/auth/register`     | Register a new user             | No                      |
-| `GET`       | `/api/auth/me`           | Get authenticated user details  | Yes                     |
-| `POST`      | `/api/auth/logout`       | Logout user                     | Yes   
-
-
-Product Endpoints
-
-| HTTP Method | Endpoint                | Description                     | Authentication Required |
-|-------------|-------------------------|---------------------------------|-------------------------|
-| `GET`       | `/api/products`          | Get all products                | No                      |
-| `POST`      | `/api/products`          | Add a new product(Admin)               | Yes                     |
-| `GET`       | `/api/products/:id`      | Get a specific product by ID    | No                      |
-| `PUT`       | `/api/products/:id`      | Update product details(Admin)          | Yes                     |
-| `DELETE`    | `/api/products/:id`      | Delete a product by ID(Admin)          | Yes                     |
-
-
-Orders Endpoints
-
-| HTTP Method | Endpoint                | Description                     | Authentication Required |
-|-------------|-------------------------|---------------------------------|-------------------------|
-| `POST`      | `/api/orders`            | Create a new order              | Yes                     |
-| `GET`       | `/api/orders`            | Get a list of user orders       | Yes                     |
-| `GET`       | `/api/orders/:id`        | Get details of a specific order | Yes                     |
-| `PUT`       | `/api/orders/:id`        | Update order status             | Yes                     |
-| `DELETE`    | `/api/orders/:id`        | Cancel an order                 | Yes                     |
-
-
-
-## 🧑‍💻 Deployment
-The application is hosted on Render:
-
-- **Frontend:** https://eccomerce-app-frontend.onrender.com
-- **Backend:** Backend API hosted with a connection to the MongoDB database.
-    
-## 🤝 Contribution
-
-Contributions are welcome! Follow these steps to contribute:
-  1. Fork the repository.
-  2. Create a new branch: git checkout -b feature-name.
-  3. Commit changes: git commit -m 'Add feature description'.
-  4. Push to your branch: git push origin feature-name.
-  5. Open a pull request.
-
-
-## 🏆 Acknowledgments
-
-| **Tool/Library**  | **Purpose**                                         |
-|--------------------|-----------------------------------------------------|
-| **React.js**       | Building a responsive and dynamic frontend.        |
-| **Node.js**        | Backend server for API management.                 |
-| **MongoDB**        | Storing user, product, and order data.             |
-| **Stripe**         | Secure and seamless payment integration.           |
-| **Tailwind CSS**   | Responsive and modern UI styling.                  |
-
-  
-
+* React.js
+* Node.js
+* MongoDB
+* Docker
+* Jenkins
+* Prometheus
+* Grafana
+* Terraform
+* Nginx
+* Stripe
